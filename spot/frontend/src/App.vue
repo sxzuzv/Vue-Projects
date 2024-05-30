@@ -18,7 +18,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "~@/assets/scss/vendors/bootstrap-vue/index";
 #app {
   /* 화면에 가득차도록 지도를 띄운다. */
   position: absolute;
