@@ -2,6 +2,8 @@
   <div class="menu">
     <!-- v-for: 반복문 -->
     <a v-for="m in menu" :key="m"> {{ m }} </a>
+    <!-- (a, b): b는 0부터 1씩 증가하는 정수 -->
+<!--    <a v-for="(m, i) in menu" :key="i"> {{ m }} </a>-->
   </div>
 
   <img alt="Vue logo" src="./assets/logo.svg">
