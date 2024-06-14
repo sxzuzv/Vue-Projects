@@ -12,6 +12,21 @@
     <p> {{ price[i] }}</p>
     <br>
   </div>
+
+  <div>
+    <h2>{{ products[0] }}</h2>
+    <p>{{ price[0] }}</p>
+    <!-- 이벤트 핸들러: click을 감지하여 특정 행동을 실행 -->
+    <button v-on:click="count++">허위 매물 신고</button> <span>신고 수: {{ count }}</span>
+  </div>
+  <div>
+    <h2>{{ products[1] }}</h2>
+    <p>{{ price[1] }}</p>
+  </div>
+  <div>
+    <h2>{{ products[2] }}</h2>
+    <p>{{ price[2] }}</p>
+  </div>
 </template>
 
 <script>
@@ -23,6 +38,7 @@
         price: ['50만원', '60만원', '70만원'],
         스타일: 'color : blue', // HTML 속성 저장 가능
         products: ['역삼동 원룸', '천호동 원룸', '마포구 원룸'],
+        count: 0
       }
     },
     components: {
