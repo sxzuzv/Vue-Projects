@@ -3,7 +3,7 @@
   <div class="black-bg" v-if="modalState == true">
     <div class="white-bg">
       <img :src="onerooms[roomNum].image" class="room-img">
-      <h2>{{ onerooms[roomNum].title }}</h2>
+      <h2>[{{ onerooms[roomNum].title }}] {{ onerooms[roomNum].price }}만원</h2>
       <p>{{ onerooms[roomNum].content }}</p> <br>
       <button @click="modalState = false">닫기</button>
     </div>
@@ -33,7 +33,7 @@
 
   <div v-for="(r, i) in onerooms" :key="i">
     <img :src="r.image" class="room-img">
-    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}</h2>
+    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}만원</h2>
     <p>{{ r.content }}</p>
     <br>
   </div>
