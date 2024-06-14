@@ -1,4 +1,12 @@
 <template>
+  <!-- 모달창 -->
+  <div class="black-bg" v-if="modalState == true">
+    <div class="white-bg">
+      <h2>상세 페이지</h2>
+      <p>내용</p> <button @click="modalState = false">닫기</button>
+    </div>
+  </div>
+
   <div class="menu">
     <!-- v-for: 반복문 -->
     <a v-for="m in menu" :key="m"> {{ m }} </a>
@@ -13,6 +21,13 @@
     <!-- 이벤트 핸들러: click을 감지하여 특정 행동을 실행 -->
     <button @click="addCount(i)">허위 매물 신고</button> <span>신고 수: {{ count[i] }}</span>
   </div>
+
+  <div>
+    <img src="./assets/img.png" class="room-img">
+    <h2 @click="modalState = true">[{{ products[0] }}] {{ price[0] }}</h2>
+    <!-- 이벤트 핸들러: click을 감지하여 특정 행동을 실행 -->
+    <button @click="addCount(0)">허위 매물 신고</button> <span>신고 수: {{ count[0] }}</span>
+  </div>
 </template>
 
 <script>
@@ -24,7 +39,8 @@
         price: ['50만원', '60만원', '70만원'],
         스타일: 'color : blue', // HTML 속성 저장 가능
         products: ['역삼동 원룸', '천호동 원룸', '마포구 원룸'],
-        count: [0, 0, 0]
+        count: [0, 0, 0],
+        modalState: false
       }
     },
     methods: {
@@ -59,9 +75,28 @@
   padding: 10px;
 }
 
+/* 매물별 이미지 스타일 적용 */
 .room-img {
   width: 200px;
   height: 200px;
   margin-top: 10px;
+}
+
+/* 모달창 스타일 적용 */
+body {
+  margin: 0;
+}
+div {
+  box-sizing: border-box;
+}
+.black-bg {
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed; padding: 20px;
+}
+.white-bg {
+  width: 100%; background: white;
+  border-radius: 8px;
+  padding: 20px;
 }
 </style>
