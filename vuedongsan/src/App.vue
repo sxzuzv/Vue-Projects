@@ -12,18 +12,21 @@
   <Discount />
 
   <!-- 매물 정보 -->
-  <div v-for="(r, i) in onerooms" :key="i">
-    <img :src="r.image" class="room-img">
-    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}만원</h2>
-    <p>{{ r.content }}</p>
-    <br>
-  </div>
+  <Card v-for="(a, i) in onerooms" :key="a" :onerooms="onerooms[i]" />
+
+<!--  <div v-for="(r, i) in onerooms" :key="i">-->
+<!--    <img :src="r.image" class="room-img">-->
+<!--    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}만원</h2>-->
+<!--    <p>{{ r.content }}</p>-->
+<!--    <br>-->
+<!--  </div>-->
 </template>
 
 <script>
   import roomInfo from './assets/oneroom.js';
   import Discount from "./components/Discount.vue";
   import Modal from "./components/Modal.vue";
+  import Card from "./components/Card.vue";
 
   export default {
     name: 'App',
@@ -46,7 +49,8 @@
     },
     components: {
       Discount: Discount,
-      Modal: Modal
+      Modal: Modal,
+      Card: Card
     }
   }
 </script>
