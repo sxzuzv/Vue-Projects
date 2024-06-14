@@ -2,8 +2,10 @@
   <!-- 모달창 -->
   <div class="black-bg" v-if="modalState == true">
     <div class="white-bg">
-      <h2>상세 페이지</h2>
-      <p>내용</p> <button @click="modalState = false">닫기</button>
+      <img :src="onerooms[roomNum].image" class="room-img">
+      <h2>{{ onerooms[roomNum].title }}</h2>
+      <p>{{ onerooms[roomNum].content }}</p> <br>
+      <button @click="modalState = false">닫기</button>
     </div>
   </div>
 
@@ -31,7 +33,7 @@
 
   <div v-for="(r, i) in onerooms" :key="i">
     <img :src="r.image" class="room-img">
-    <h2>[{{ r.title }}] {{ r.price }}</h2>
+    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}</h2>
     <p>{{ r.content }}</p>
     <br>
   </div>
@@ -50,7 +52,8 @@
         products: ['역삼동 원룸', '천호동 원룸', '마포구 원룸'],
         onerooms: roomInfo,
         count: [0, 0, 0],
-        modalState: false
+        modalState: false,
+        roomNum: 0
       }
     },
     methods: {
