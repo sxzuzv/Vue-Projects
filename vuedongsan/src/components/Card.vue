@@ -1,7 +1,7 @@
 <template>
   <div>
     <img :src="onerooms.image" class="room-img">
-    <h2>[{{ onerooms.title }}] {{ onerooms.price }}만원</h2>
+    <h2 @click="$emit('openModal')">[{{ onerooms.title }}] {{ onerooms.price }}만원</h2>
     <p>{{ onerooms.content }}</p>
     <br>
   </div>
@@ -11,7 +11,7 @@
   export default {
     name: 'Card',
     props: {
-      onerooms: Object
+      onerooms: Object,
     }
   }
 </script>

@@ -12,14 +12,7 @@
   <Discount />
 
   <!-- 매물 정보 -->
-  <Card v-for="(a, i) in onerooms" :key="a" :onerooms="onerooms[i]" />
-
-<!--  <div v-for="(r, i) in onerooms" :key="i">-->
-<!--    <img :src="r.image" class="room-img">-->
-<!--    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}만원</h2>-->
-<!--    <p>{{ r.content }}</p>-->
-<!--    <br>-->
-<!--  </div>-->
+  <Card @openModal="modalState = true" v-for="(a, i) in onerooms" :key="a" :onerooms="onerooms[i]" />
 </template>
 
 <script>
