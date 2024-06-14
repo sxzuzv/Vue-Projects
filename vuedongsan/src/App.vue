@@ -15,22 +15,31 @@
   </div>
   <br>
 
-  <div v-for="(p, i) in products" :key="i">
-    <img src="./assets/img.png" class="room-img">
-    <h2>[{{ p }}] {{ price[i] }}</h2>
-    <!-- 이벤트 핸들러: click을 감지하여 특정 행동을 실행 -->
-    <button @click="addCount(i)">허위 매물 신고</button> <span>신고 수: {{ count[i] }}</span>
-  </div>
+<!--  <div v-for="(p, i) in products" :key="i">-->
+<!--    <img src="./assets/img.png" class="room-img">-->
+<!--    <h2>[{{ p }}] {{ price[i] }}</h2>-->
+<!--    &lt;!&ndash; 이벤트 핸들러: click을 감지하여 특정 행동을 실행 &ndash;&gt;-->
+<!--    <button @click="addCount(i)">허위 매물 신고</button> <span>신고 수: {{ count[i] }}</span>-->
+<!--  </div>-->
 
-  <div>
-    <img src="./assets/img.png" class="room-img">
-    <h2 @click="modalState = true">[{{ products[0] }}] {{ price[0] }}</h2>
-    <!-- 이벤트 핸들러: click을 감지하여 특정 행동을 실행 -->
-    <button @click="addCount(0)">허위 매물 신고</button> <span>신고 수: {{ count[0] }}</span>
+<!--  <div>-->
+<!--    <img src="./assets/img.png" class="room-img">-->
+<!--    <h2 @click="modalState = true">[{{ products[0] }}] {{ price[0] }}</h2>-->
+<!--    &lt;!&ndash; 이벤트 핸들러: click을 감지하여 특정 행동을 실행 &ndash;&gt;-->
+<!--    <button @click="addCount(0)">허위 매물 신고</button> <span>신고 수: {{ count[0] }}</span>-->
+<!--  </div>-->
+
+  <div v-for="(r, i) in onerooms" :key="i">
+    <img :src="r.image" class="room-img">
+    <h2>[{{ r.title }}] {{ r.price }}</h2>
+    <p>{{ r.content }}</p>
+    <br>
   </div>
 </template>
 
 <script>
+  import roomInfo from './assets/oneroom.js';
+
   export default {
     name: 'App',
     data() {  // 데이터 저장소: 변수 등의 데이터를 보관한다.
@@ -39,6 +48,7 @@
         price: ['50만원', '60만원', '70만원'],
         스타일: 'color : blue', // HTML 속성 저장 가능
         products: ['역삼동 원룸', '천호동 원룸', '마포구 원룸'],
+        onerooms: roomInfo,
         count: [0, 0, 0],
         modalState: false
       }
@@ -77,8 +87,7 @@
 
 /* 매물별 이미지 스타일 적용 */
 .room-img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
   margin-top: 10px;
 }
 
