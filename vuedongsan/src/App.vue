@@ -8,10 +8,10 @@
   <br>
 
   <div v-for="(p, i) in products" :key="i">
+    <img src="./assets/img.png" class="room-img">
     <h2>[{{ p }}] {{ price[i] }}</h2>
     <!-- 이벤트 핸들러: click을 감지하여 특정 행동을 실행 -->
     <button @click="addCount(i)">허위 매물 신고</button> <span>신고 수: {{ count[i] }}</span>
-    <br><br>
   </div>
 </template>
 
@@ -57,5 +57,11 @@
 .menu a {
   color: white;
   padding: 10px;
+}
+
+.room-img {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
 }
 </style>
