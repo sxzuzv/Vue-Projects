@@ -9,6 +9,7 @@
     </div>
   </div>
 
+  <!-- 상단 메뉴 -->
   <div class="menu">
     <!-- v-for: 반복문 -->
     <a v-for="m in menu" :key="m"> {{ m }} </a>
@@ -16,6 +17,16 @@
 <!--    <a v-for="(m, i) in menu" :key="i"> {{ m }} </a>-->
   </div>
   <br>
+
+  <!-- 홍보 배너: Component -->
+  <Discount />
+
+  <div v-for="(r, i) in onerooms" :key="i">
+    <img :src="r.image" class="room-img">
+    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}만원</h2>
+    <p>{{ r.content }}</p>
+    <br>
+  </div>
 
 <!--  <div v-for="(p, i) in products" :key="i">-->
 <!--    <img src="./assets/img.png" class="room-img">-->
@@ -30,17 +41,11 @@
 <!--    &lt;!&ndash; 이벤트 핸들러: click을 감지하여 특정 행동을 실행 &ndash;&gt;-->
 <!--    <button @click="addCount(0)">허위 매물 신고</button> <span>신고 수: {{ count[0] }}</span>-->
 <!--  </div>-->
-
-  <div v-for="(r, i) in onerooms" :key="i">
-    <img :src="r.image" class="room-img">
-    <h2 @click="modalState = true; roomNum = i">[{{ r.title }}] {{ r.price }}만원</h2>
-    <p>{{ r.content }}</p>
-    <br>
-  </div>
 </template>
 
 <script>
   import roomInfo from './assets/oneroom.js';
+  import Discount from "./components/Discount.vue";
 
   export default {
     name: 'App',
@@ -62,7 +67,7 @@
       }
     },
     components: {
-
+      Discount: Discount
     }
   }
 </script>
