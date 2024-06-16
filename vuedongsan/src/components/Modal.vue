@@ -13,10 +13,10 @@
 <script>
   export default {
     name: 'Modal',
-    props: {
+    props: {  // Props를 통해 가져온 데이터는 수정 불가(read only)
       onerooms: Array,
       roomNum: Number,
-      modalState: Boolean // Props를 통해 가져온 데이터는 수정 불가(read only)
+      modalState: Boolean
     }
   }
 </script>
