@@ -5,7 +5,7 @@
       <img :src="onerooms[roomNum].image" class="room-img">
       <h2>[{{ onerooms[roomNum].title }}] {{ onerooms[roomNum].price }}만원</h2>
       <p>{{ onerooms[roomNum].content }}</p>
-      계약 기간: <input @input="month = $event.target.value">개월
+      계약 기간: <input v-model="month">개월
       <p>선택 개월: {{ month }}개월, 총 금액: {{ onerooms[roomNum].price * month }}만원</p>
       <button @click="$emit('closeModal')">닫기</button>
     </div>
