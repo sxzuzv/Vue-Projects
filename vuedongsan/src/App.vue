@@ -1,8 +1,8 @@
 <template>
-  <div class="modalStart" :class="{modalEnd : modalState}">
+  <Transition name="fadeModal">
   <!-- 모달창: Props -->
   <Modal @closeModal="modalState = false" :onerooms="onerooms" :roomNum="roomNum" :modalState="modalState" />
-  </div>
+  </Transition>
 
   <!-- 상단 메뉴 -->
   <div class="menu">
@@ -77,17 +77,29 @@
   margin-top: 10px;
 }
 
-/* 모달창 출력 스타일 적용: 애니메이션 */
-/*
-  opacity(투명도): 애니메이션 시작 시 0 - 애니메이션 종료 시 1
-  transition: all 1s; => class에 해당하는 모든 속성이 1초에 걸쳐 부드럽게 변화
- */
-.modalStart {
+/* 모달창 출력 애니메이션(<Transition>) 적용 */
+.fadeModal-enter-from {
   opacity: 0;
-  transition: all 1s;
-
 }
-.modalEnd {
+
+.fadeModal-enter-active {
+  transition: all 1s;
+}
+
+.fadeModal-enter-to {
   opacity: 1;
+}
+
+/* 모달창 종료 애니메이션 적용 */
+.fadeModal-leave-from {
+  opacity: 1;
+}
+
+.fadeModal-leave-active {
+  transition: all 1s;
+}
+
+.fadeModal-leave-to {
+  opacity: 0;
 }
 </style>
