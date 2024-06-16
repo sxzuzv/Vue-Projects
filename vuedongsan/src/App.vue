@@ -12,7 +12,7 @@
   <Discount />
 
   <!-- 매물 정보 -->
-  <Card @openModal="modalState = true" v-for="(a, i) in onerooms" :key="a" :onerooms="onerooms[i]" />
+  <Card @openModal="modalState = true, roomNum = $event" v-for="(a, i) in onerooms" :key="a" :onerooms="onerooms[i]" />
 </template>
 
 <script>
