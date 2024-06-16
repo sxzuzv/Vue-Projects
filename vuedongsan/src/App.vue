@@ -10,6 +10,9 @@
   </div>
   <br>
 
+  <!-- 가격 순 매물 정렬 버튼 -->
+  <button @click="priceSort">가격순 매물 정렬</button>
+
   <!-- 홍보 배너: Component -->
   <Discount />
 
@@ -40,6 +43,11 @@
     methods: {
       addCount(i) {
         this.count[i]++;
+      },
+      priceSort() {
+        this.onerooms.sort(function (a, b){
+          return a.price - b.price
+        })
       }
     },
     components: {
