@@ -20,6 +20,13 @@
         month: 1
       }
     },
+    watch: {
+      month(a) {  // 함수명은 데이터명과 동일하게 작성한다.
+        if (a > 12) {
+          alert('입력 오류! (12개월까지 입력 가능)');
+        }
+      }
+    },
     props: {  // Props를 통해 가져온 데이터는 수정 불가(read only)
       onerooms: Array,
       roomNum: Number,
