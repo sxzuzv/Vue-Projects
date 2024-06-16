@@ -23,10 +23,10 @@
     watch: {
       // 함수명은 데이터명과 동일하게 작성한다.
       // (변경 후 데이터 값, 변경 전 데이터 값): 파라미터는 두 개까지 입력 가능하다.
-      month(a, b) {
-        if (a > 12) {
-          alert('입력 오류! (12개월까지 입력 가능)');
-          this.month = b;
+      month(a) {
+        if (isNaN(a) == true) { // isNaN(): 문자일 시 true, 숫자일 시 false
+          alert('입력 오류! 숫자만 입력 가능합니다.');
+          this.month = 1;
         }
       }
     },
