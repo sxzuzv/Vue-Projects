@@ -1,6 +1,6 @@
 <template>
   <!-- 모달창: Props -->
-  <Modal :onerooms="onerooms" :roomNum="roomNum" :modalState="modalState" />
+  <Modal @closeModal="modalState = false" :onerooms="onerooms" :roomNum="roomNum" :modalState="modalState" />
 
   <!-- 상단 메뉴 -->
   <div class="menu">

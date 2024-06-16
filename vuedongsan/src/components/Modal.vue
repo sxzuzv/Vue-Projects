@@ -4,8 +4,8 @@
     <div class="white-bg">
       <img :src="onerooms[roomNum].image" class="room-img">
       <h2>[{{ onerooms[roomNum].title }}] {{ onerooms[roomNum].price }}만원</h2>
-      <p>{{ onerooms[roomNum].content }}</p> <br>
-<!--      <button @click="modalState = false">닫기</button>-->
+      <p>{{ onerooms[roomNum].content }}</p>
+      <button @click="$emit('closeModal')">닫기</button>
     </div>
   </div>
 </template>
