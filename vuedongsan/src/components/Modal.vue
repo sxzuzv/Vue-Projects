@@ -5,6 +5,8 @@
       <img :src="onerooms[roomNum].image" class="room-img">
       <h2>[{{ onerooms[roomNum].title }}] {{ onerooms[roomNum].price }}만원</h2>
       <p>{{ onerooms[roomNum].content }}</p>
+      계약 기간: <input @input="month = $event.target.value">개월
+      <p>선택 개월: {{ month }}개월, 총 금액: {{ onerooms[roomNum].price * month }}만원</p>
       <button @click="$emit('closeModal')">닫기</button>
     </div>
   </div>
@@ -13,6 +15,11 @@
 <script>
   export default {
     name: 'Modal',
+    data() {
+      return {
+        month: 1
+      }
+    },
     props: {  // Props를 통해 가져온 데이터는 수정 불가(read only)
       onerooms: Array,
       roomNum: Number,
