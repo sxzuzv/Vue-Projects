@@ -1,7 +1,7 @@
 <template>
   <div class="mt-4">
-    <h2>{{ blogs[$route.params.id - 1].title }}</h2>
-    <p>{{ blogs[$route.params.id - 1].content }}</p>
+    <h2>{{ blogs[$route.params.id].title }}</h2>
+    <p>{{ blogs[$route.params.id].content }}</p>
   </div>
 </template>
 
