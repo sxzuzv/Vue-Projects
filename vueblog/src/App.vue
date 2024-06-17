@@ -49,6 +49,7 @@
   <div>
     <router-link to="/list">게시글 목록 보기</router-link><br>
     <router-link to="/card">카드 보기</router-link>
+    <router-link to="/detail" :blogs="blogs">상세 페이지 보기</router-link>
   </div>
   <br>
   <router-view :blogs="blogs"></router-view>

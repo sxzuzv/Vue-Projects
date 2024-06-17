@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import List from "./components/List.vue";
 import Card from "./components/Card.vue";
+import Detail from "./components/Detail.vue";
 
 const routes = [
     {
@@ -10,6 +11,10 @@ const routes = [
     {
         path: "/card",
         component: Card
+    },
+    {
+        path: "/detail/:id",
+        component: Detail
     }
 ];
 
