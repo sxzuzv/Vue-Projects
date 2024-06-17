@@ -18,7 +18,7 @@
   <br><br>
 
   <!-- 홍보 배너: Component -->
-  <Discount />
+  <Discount v-if="showDiscount == true"/>
 
   <!-- 매물 정보 -->
   <Card @openModal="modalState = true, roomNum = $event" v-for="(a, i) in onerooms" :key="a" :onerooms="onerooms[i]" />
@@ -32,6 +32,11 @@
 
   export default {
     name: 'App',
+    mounted() {
+      setTimeout(()=>{
+        this.showDiscount = false;
+      }, 2000);
+    },
     data() {  // 데이터 저장소: 변수 등의 데이터를 보관한다.
       return {
         menu: ['HOME', 'PRODUCTS', 'ABOUT'],
@@ -42,7 +47,8 @@
         onerooms: roomInfo,
         count: [0, 0, 0],
         modalState: false,
-        roomNum: 0
+        roomNum: 0,
+        showDiscount: true
       }
     },
     methods: {
