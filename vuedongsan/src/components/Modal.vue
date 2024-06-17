@@ -15,6 +15,12 @@
 <script>
   export default {
     name: 'Modal',
+    beforeUpdate() {
+      if (this.month == 2) {
+        alert('3개월부터 입력 가능합니다.');
+        this.month = 3;
+      }
+    },
     data() {
       return {
         month: 1
