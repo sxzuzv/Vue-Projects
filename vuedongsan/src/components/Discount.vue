@@ -1,13 +1,16 @@
 <template>
   <!-- 홍보 배너 -->
   <div class="discount">
-    <h2>지금 결제 시 20% 할인!</h2>
+    <h2>지금 결제 시 {{ salePercent }}% 할인!</h2>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Discount'
+    name: 'Discount',
+    props: {
+      salePercent: Number
+    }
   }
 </script>
 
