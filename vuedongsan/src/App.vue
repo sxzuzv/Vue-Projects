@@ -13,6 +13,10 @@
   <!-- 가격 순 매물 정렬 버튼 -->
   <button @click="priceSort">가격순 매물 정렬</button>
 
+  <!-- 정렬 되돌리기 버튼 -->
+  <button @click="sortBack">되돌리기</button>
+  <br><br>
+
   <!-- 홍보 배너: Component -->
   <Discount />
 
@@ -34,6 +38,7 @@
         price: ['50만원', '60만원', '70만원'],
         스타일: 'color : blue', // HTML 속성 저장 가능
         products: ['역삼동 원룸', '천호동 원룸', '마포구 원룸'],
+        oneroomsOriginal: [...roomInfo],
         onerooms: roomInfo,
         count: [0, 0, 0],
         modalState: false,
@@ -46,8 +51,11 @@
       },
       priceSort() {
         this.onerooms.sort(function (a, b){
-          return a.price - b.price
+          return a.price - b.price;
         })
+      },
+      sortBack() {
+        this.onerooms = [...this.oneroomsOriginal];
       }
     },
     components: {
