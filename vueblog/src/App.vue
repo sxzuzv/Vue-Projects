@@ -45,32 +45,11 @@
     <!-- navbar end -->
   </div>
 
-  <List :blogs="blogs" />
-
-  <div class="container mt-4">
-    <!-- card start -->
-    <div class="card" style="width: 50%; display: inline-block">
-      <img src="./assets/nongdam.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 50%; display: inline-block">
-      <img src="./assets/nongdam.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <!-- card end -->
-  </div>
+  <!-- router 설정 파일에 따라 Component 노출 -->
+  <router-view :blogs="blogs"></router-view>
 </template>
 
 <script>
-import List from './components/List.vue';
 import blog from './assets/blog.js';
 
 export default {
@@ -81,7 +60,6 @@ export default {
     }
   },
   components: {
-    List: List
   }
 }
 </script>
