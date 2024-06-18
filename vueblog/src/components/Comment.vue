@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>ERROR!</h2>
+    <h2>댓글 페이지</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Error'
+  name: 'Comment'
 }
 </script>
 
